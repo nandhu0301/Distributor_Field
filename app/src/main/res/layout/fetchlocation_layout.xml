@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:id="@+id/circler_image"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/project_image"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="5sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/circler_image">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="5sp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:src="@drawable/ic_owner_name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginTop="5sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:text="Store Name   :" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:textSize="15sp"
+                android:id="@+id/project_nametxt"
+                android:textColor="@color/black"
+                android:layout_marginStart="10sp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:src="@drawable/ic_owner_name"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:layout_marginStart="10sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:text="Store Owner Name     :"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:id="@+id/owner_Nametxt"
+                android:layout_marginStart="10sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:src="@drawable/ic_phone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginStart="10sp"
+                android:text="Contact Number :"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="10sp"
+                android:textSize="15sp"
+                android:id="@+id/owner_phoneNumber" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:visibility="gone"
+                android:textSize="15sp"
+                android:id="@+id/address_layout"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
+            android:orientation="horizontal">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:layout_margin="5sp"
+                android:id="@+id/fetchlocation_cardview"
+                android:layout_marginStart="30sp"
+                android:layout_marginEnd="30sp"
+                android:backgroundTint="@color/maroon"
+                app:cardCornerRadius="10sp"
+                app:cardMaxElevation="5sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Fetch Location"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
+            android:orientation="horizontal">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:layout_margin="5sp"
+                android:id="@+id/save_cardview"
+                android:layout_marginStart="30sp"
+                android:layout_marginEnd="30sp"
+                android:backgroundTint="@color/purple_200"
+                app:cardCornerRadius="10sp"
+                app:cardMaxElevation="5sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

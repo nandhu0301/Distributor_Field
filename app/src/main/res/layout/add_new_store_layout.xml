@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbarSize="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/purple_200">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="New Shop"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/Cancel"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_margin="5dp"
+                    android:src="@drawable/baseline_cancel_24" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:hint="Shop Name"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#6A006A"
+
+                    android:textSize="14dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shopNameEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FEF9FF"
+                        android:imeOptions="flagNoExtractUi"
+
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:hint="Shop Owner Name"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#6A006A"
+
+                    android:textSize="14dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shopOwnerNameEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="#FEF9FF"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="text"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:hint="Phone Number"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#6A006A"
+
+                    android:textSize="14dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phoneNumberEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FEF9FF"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:hint="Alternate Phone Number"
+                    android:maxLength="10"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#6A006A"
+
+                    android:textSize="14dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/alternate_phone_number_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FEF9FF"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/loginUsernameEdt"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:hint="Store Address"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#6A006A"
+
+                    android:textSize="14dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/store_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="#FEF9FF"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="text"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pickAddressFromMap"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:hint="Pick Address From Map"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#6A006A"
+
+                    android:textSize="14dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pick_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FEF9FF"
+                        android:clickable="true"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="text"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/textView_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="State"
+                        android:textColor="#6A006A" />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/textView_district"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="District"
+                        android:textColor="#6A006A" />
+
+                    <Spinner
+                        android:id="@+id/Districtspinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
+                </LinearLayout>
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:background="#FEF9FF"
+                    android:completionThreshold="1"
+                    android:hint="Zone"
+                    android:paddingLeft="10dp"
+                    android:textColor="#6A006A"
+                    android:textColorHint="#6A006A"
+                    android:textSize="14dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:hint="Store Landmark"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#6A006A"
+
+                    android:textSize="14dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/store_landmark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FEF9FF"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="text"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:hint="Store GSTIN"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#6A006A"
+                    android:textSize="14dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/store_gst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="#FEF9FF"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="text"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:hint="Remarks"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#6A006A"
+                    android:textSize="14dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/remarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FEF9FF"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="textMultiLine"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voice Record About The Store"
+                    android:textColor="#6A006A" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnRecord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:background="#E0C3E6"
+                        android:drawableLeft="@drawable/baseline_keyboard_voice_24"
+                        android:text="Record"
+                        android:textColor="#6A006A" />
+
+                    <Button
+                        android:id="@+id/btnPlay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:background="#E0C3E6"
+                        android:drawableLeft="@drawable/baseline_play_circle_outline_24"
+                        android:text="Play"
+                        android:textColor="#6A006A"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnDelete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btnRecord"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:background="#E0C3E6"
+                        android:drawableLeft="@drawable/round_delete_24"
+                        android:text="Delete"
+                        android:textColor="#6A006A"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/store_image"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/baseline_file_upload_24"></ImageView>
+
+                <Button
+                    android:id="@+id/submitButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="100dp"
+                    android:backgroundTint="#6A006A"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold"></Button>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,222 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+
+        android:id="@+id/header_lay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_200"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backToDashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="Shop Details"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/firstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:cardElevation="5dp">
+
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/login_logo" />
+
+
+                <LinearLayout
+
+                    android:layout_gravity="bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/firstRelative"
+                        android:background="#80ECCBCB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginLeft="20dp"
+                            android:id="@+id/storeNameTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:textColor="@color/black"
+                            android:drawablePadding="5dp"
+                            android:gravity="center"
+                            android:text="" />
+                        <TextView
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="30dp"
+                            android:id="@+id/storeAddressTxt"
+                            android:layout_below="@+id/storeNameTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:textColor="@color/black"
+                            android:drawablePadding="5dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <RatingBar
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+
+                            android:stepSize="0.1"
+                            android:isIndicator="true"
+                            android:theme="@style/RatingBar"
+                            android:ellipsize="marquee"
+                            android:layout_marginTop="5dp"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:hint=""
+                            android:rating="4.5"
+                            android:numStars="5"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/newOrder"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_below="@+id/cardview"
+                android:layout_width="match_parent"
+                android:text="New Order"
+                android:textColor="@color/white"
+                android:background="@color/purple_200"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+            <RelativeLayout
+                android:layout_margin="20dp"
+                android:layout_below="@+id/newOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:id="@+id/outstanding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Outstanding"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/outstandingamount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹ 120000"
+                        android:textColor="@color/purple_200"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/outstanding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bill Pending"
+                        android:textStyle="bold"
+
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/outstandingbill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3 Bills"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_200"
+                        android:textSize="16dp"
+                        android:layout_alignParentEnd="true" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+
+                        android:id="@+id/outstandingRecyclerview"
+                        android:layout_width="match_parent"
+                        android:overScrollMode="never"
+                        android:visibility="visible"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+</FrameLayout>
+

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#ffffff"
+    tools:context=".LoginActivity">
+
+
+    <RelativeLayout
+        android:layout_marginTop="100dp"
+
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/starlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/login_logo"
+                android:foregroundGravity="right"></ImageView>
+
+
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/userInput"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_below="@+id/starlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/loginUsernameEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginRight="20dp"
+                android:textSize="14dp"
+                android:hint="Mobile Number"
+                android:textColorHint="#6A006A"
+                android:textColor="@color/white"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userNameEdt"
+                    android:layout_width="match_parent"
+                    android:textSize="14dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:background="#FEF9FF"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textEmailAddress"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/loginUsernameEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColorHint="#6A006A"
+                app:passwordToggleTint="@color/black"
+                app:passwordToggleEnabled="true"
+                android:layout_marginRight="20dp"
+                android:textSize="14dp"
+                android:hint="Password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEdt"
+                    android:layout_width="match_parent"
+                    android:textSize="14dp"
+                    android:background="#FEF9FF"
+
+                    android:inputType="textPassword"
+                    android:maxLength="52"
+                    android:imeOptions="flagNoExtractUi"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_below="@+id/userInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:backgroundTint="#6A006A"
+                >
+            </Button>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

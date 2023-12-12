@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/first"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_new">
+
+        <LinearLayout
+
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/billNumberTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="Bill No"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@color/rate_normal_color" />
+
+            <TextView
+                android:id="@+id/customerTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="Customer"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@color/rate_normal_color" />
+
+            <TextView
+                android:id="@+id/amountTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:textSize="14dp"
+                android:text="Amount"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@color/rate_normal_color" />
+
+            <TextView
+                android:id="@+id/invoiceTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="@string/click"
+                android:drawableRight="@drawable/baseline_download_24"
+                android:textSize="14dp"
+                android:textColor="@color/main_blue_color"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

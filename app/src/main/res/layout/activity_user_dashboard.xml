@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User_Dashboard_Activity">
+    <LinearLayout
+        android:id="@+id/bt_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+    <TextView
+        android:foregroundGravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:paddingLeft="5dp"
+        android:text="Logout"
+        android:gravity="right"
+        android:drawableLeft="@drawable/logout_01"
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        android:drawablePadding="10dp"
+        android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/basicLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_baseline_account_circle_24" />
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/salesOfficerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/roleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="Sales Officer"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/shoplist1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/basicLayout"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Sales Beat"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/currentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text="02-03-2023"
+            android:textSize="17dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/shoplist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerview"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Shop List"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/create_new_store"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="#ED5C5C"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+
+            android:text="New Store"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shoplist1"
+        android:orientation="horizontal">
+
+        <!-- TextView 1 -->
+        <TextView
+            android:id="@+id/monTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/ackround_purple"
+            android:gravity="center"
+            android:text="Mon"
+            android:textStyle="bold"
+            android:textColor="@color/purple_200"
+            android:textSize="14dp" />
+
+        <!-- TextView 2 -->
+        <TextView
+            android:id="@+id/tueTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/ackround_purple"
+            android:gravity="center"
+            android:text="Tue"
+            android:textStyle="bold"
+
+            android:textColor="@color/purple_200"
+            android:textSize="14dp" />
+
+        <!-- TextView 3 -->
+        <TextView
+            android:id="@+id/wenTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/ackround_purple"
+            android:gravity="center"
+            android:text="Wed"
+            android:textColor="@color/purple_200"
+            android:textSize="14dp" />
+
+        <!-- TextView 4 -->
+        <TextView
+            android:id="@+id/thuTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/ackround_purple"
+            android:gravity="center"
+            android:text="Thu"
+            android:textColor="@color/purple_200"
+            android:textSize="14dp" />
+
+        <!-- TextView 5 -->
+        <TextView
+            android:id="@+id/friTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+
+            android:layout_weight="1"
+            android:background="@drawable/ackround_purple"
+            android:gravity="center"
+            android:text="Fri"
+            android:textColor="@color/purple_200"
+
+            android:textSize="14dp" />
+
+        <!-- TextView 6 -->
+        <TextView
+            android:id="@+id/satTextview"
+            android:textStyle="bold"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/ackround_purple"
+            android:gravity="center"
+            android:text="Sat"
+            android:textColor="@color/purple_200"
+
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/store_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shoplist"
+        android:layout_marginBottom="50dp"
+        android:overScrollMode="never"
+        android:scrollbarSize="0dp" />
+
+
+</RelativeLayout>

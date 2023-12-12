@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SendApprovalActivity">
+
+
+    <LinearLayout
+        android:id="@+id/header_lay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_200"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backToDashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="Order History"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+
+        <!-- TextView 1 -->
+        <TextView
+            android:id="@+id/thisWeekTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/ackround_purple"
+            android:gravity="center"
+            android:text="THIS WEEK"
+            android:textColor="@color/purple_200"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+        <!-- TextView 2 -->
+        <TextView
+            android:id="@+id/thisMonthTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/ackround_purple"
+            android:gravity="center"
+            android:text="THIS MONTH"
+            android:textColor="@color/purple_200"
+
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+        <!-- TextView 3 -->
+        <TextView
+            android:id="@+id/thisYearTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+
+            android:layout_weight="1"
+            android:background="@drawable/ackround_purple"
+            android:gravity="center"
+            android:text="THIS YEAR"
+            android:textColor="@color/purple_200"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/first"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/border_new">
+
+                <LinearLayout
+
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:text="Bill No"
+                        android:textSize="14dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/rate_normal_color" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:text="Customer"
+                        android:textSize="14dp"
+
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/rate_normal_color" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:text="Amount"
+                        android:textSize="14dp"
+
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/rate_normal_color" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:text="Invoice"
+                        android:textSize="14dp"
+
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/rate_normal_color" />
+
+
+
+
+            </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/orderRecyclerview"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp" />
+
+</LinearLayout>
+
+

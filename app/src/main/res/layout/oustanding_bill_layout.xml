@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/dotted"
+    android:layout_margin="10dp"
+
+    android:id="@+id/clickLayout"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/first"
+        android:background="#FFF9FF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/outBillumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="Bill No"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/outPurchasedAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="Purchased Amount"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:id="@+id/outBalancedAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:textSize="14dp"
+                android:text="Balance Amount"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/innerRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp" />
+
+</RelativeLayout>
