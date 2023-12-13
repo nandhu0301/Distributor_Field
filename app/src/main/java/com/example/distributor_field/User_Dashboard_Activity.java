@@ -1,10 +1,13 @@
 package com.example.distributor_field;
 
+import static android.Manifest.permission.READ_MEDIA_AUDIO;
+import static android.Manifest.permission.READ_MEDIA_VIDEO;
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -328,6 +331,9 @@ public class User_Dashboard_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkPermission();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    checkPermissionForT();
+                }
 
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(User_Dashboard_Activity.this);
                 LayoutInflater inflater = getLayoutInflater();
@@ -447,7 +453,7 @@ public class User_Dashboard_Activity extends AppCompatActivity {
                                 mMap = googleMap;
                                 fusedLocationClient = LocationServices.getFusedLocationProviderClient(User_Dashboard_Activity.this);
                                 geocoder = new Geocoder(User_Dashboard_Activity.this, Locale.getDefault());
-                                if (ActivityCompat.checkSelfPermission(User_Dashboard_Activity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(User_Dashboard_Activity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                                if (ActivityCompat.checkSelfPermission(User_Dashboard_Activity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(User_Dashboard_Activity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
                                     checkPermission();
 
@@ -1130,16 +1136,15 @@ public class User_Dashboard_Activity extends AppCompatActivity {
 
 
     public void checkPermission() {
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
-        ) {//Can add more as per requirement
-
             ActivityCompat.requestPermissions(this,
-                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,RECORD_AUDIO,WRITE_EXTERNAL_STORAGE},
                     123);
 
-        }
-        return;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+    public  void checkPermissionForT(){
+        ActivityCompat.requestPermissions(this,new String[]{READ_MEDIA_AUDIO,READ_MEDIA_VIDEO,RECORD_AUDIO},101);
+
     }
 
     private void searchLocation(String query) {
@@ -1368,7 +1373,7 @@ public class User_Dashboard_Activity extends AppCompatActivity {
     }
 
     private void startRecording() {
-        if (checkPermissions()) {
+      //  if (checkPermissions()) {
             if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                 mFileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/AudioRecording.3gp";
 //file=convertStringToFile(mFileName);
@@ -1389,9 +1394,9 @@ public class User_Dashboard_Activity extends AppCompatActivity {
                 e.printStackTrace();
                 Toast.makeText(this, "" + e, Toast.LENGTH_LONG).show();
             }
-        } else {
-            RequestPermissions();
-        }
+//        } else {
+//            RequestPermissions();
+//        }
     }
 
     private void RequestPermissions() {
