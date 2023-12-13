@@ -791,9 +791,16 @@ public class User_Dashboard_Activity extends AppCompatActivity {
                         } else if (imagePath == null) {
                             Toast.makeText(User_Dashboard_Activity.this, "Store Image Mandatory ", Toast.LENGTH_SHORT).show();
                             return;
-                        } else {
+                        } else if (mFileName==null) {
+                            Toast.makeText(User_Dashboard_Activity.this, "Voice Record is Mandatory", Toast.LENGTH_SHORT).show();
+                        } else if (remarks.equals("")) {
+                            remarks.setError(Constants.REQUIRED);
+                        }
+
+
+                        else {
                             uploadImage(store_name_str, store_owner_name_str, phone_number_str, alternate_phone_number_str, store_address_str, store_landmark_str, store_gstin_str, imagePath, b,
-                                    stateSpinner.getSelectedItem().toString(), Districtspinner.getSelectedItem().toString(), autoCompleteTextView.getText().toString().trim(), String.valueOf(latitude), String.valueOf(longitude), pick_address.getText().toString().trim());
+                                    stateSpinner.getSelectedItem().toString(), Districtspinner.getSelectedItem().toString(), autoCompleteTextView.getText().toString().trim(), String.valueOf(latitude), String.valueOf(longitude), pick_address.getText().toString().trim(),remarks.getText().toString().trim(),mFileName);
                         }
                     }
                 });
@@ -1013,7 +1020,7 @@ public class User_Dashboard_Activity extends AppCompatActivity {
 
     private void uploadImage(String shopName, String shop_owner_name, String phoneNumber, String alternate_phone_number, String store_address, String store_landmark, String store_gstin, String imagePath, AlertDialog dialog,
 
-                             String state, String district, String zone, String latitude, String longtitude, String address) {
+                             String state, String district, String zone, String latitude, String longtitude, String address,String remarks,String audioPath) {
         //Toast.makeText(this, ""+imagePath, Toast.LENGTH_SHORT).show();
         Log.d("TEST:", imagePath);
 
@@ -1027,6 +1034,7 @@ public class User_Dashboard_Activity extends AppCompatActivity {
 
         // Replace "YOUR_TOKEN" with the actual Bearer token
         // String token = "144|gNB8AmiHGQVCbqRzG1wuxXMm0bKEtUvrtsWXb0TG";
+        File audio=new File(audioPath);
 
         // Create the file object from the image path
         File file = new File(imagePath);
@@ -1046,8 +1054,10 @@ public class User_Dashboard_Activity extends AppCompatActivity {
                 addFormDataPart("state", state).addFormDataPart("district", district).addFormDataPart("zone", zone).
                 addFormDataPart("latitude", latitude).
                 addFormDataPart("longitude", longtitude).
-                addFormDataPart("location_details", address).
-                build();
+                addFormDataPart("location_details", address)
+                .addFormDataPart("audio", audio.getName(), RequestBody.create(audio, mediaType))
+                .addFormDataPart("Remarks", remarks).
+                 build();
 
 
         Request request = new Request.Builder().url(Constants.domain_name + "retailer/create").
