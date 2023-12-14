@@ -1415,12 +1415,11 @@ public class User_Dashboard_Activity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode ==
-                REQUEST_PERMISSION_CODE
-        ) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.
-                    PERMISSION_GRANTED
-            ) {
+
+        if (requestCode == REQUEST_PERMISSION_CODE) {
+
+
+           /* if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 // Permission granted, you can start recording here
             } else {
                 if (grantResults.length > 0) {
@@ -1447,7 +1446,7 @@ public class User_Dashboard_Activity extends AppCompatActivity {
 // Toast.makeText(this, "Allow permission for storage access!", Toast.LENGTH_SHORT).show();
                     }
                 }
-            }
+            }*/
         }
     }
 
