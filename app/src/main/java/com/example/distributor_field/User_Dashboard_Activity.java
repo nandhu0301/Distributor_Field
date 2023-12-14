@@ -1063,7 +1063,7 @@ public class User_Dashboard_Activity extends AppCompatActivity {
                 addFormDataPart("location_details", address)
                 .addFormDataPart("audio", audio.getName(), RequestBody.create(audio, mediaType))
                 .addFormDataPart("Remarks", remarks).
-                 build();
+                build();
 
 
         Request request = new Request.Builder().url(Constants.domain_name + "retailer/create").
@@ -1136,9 +1136,9 @@ public class User_Dashboard_Activity extends AppCompatActivity {
 
 
     public void checkPermission() {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,RECORD_AUDIO,WRITE_EXTERNAL_STORAGE},
-                    123);
+        ActivityCompat.requestPermissions(this,
+                new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,RECORD_AUDIO,WRITE_EXTERNAL_STORAGE},
+                123);
 
     }
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
@@ -1188,7 +1188,7 @@ public class User_Dashboard_Activity extends AppCompatActivity {
 
     public void updatelocation(int storeId, String storeName, String storeOwnerName, String phoneNumber) {
 
-       // Toast.makeText(this, "" + storeId, Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "" + storeId, Toast.LENGTH_SHORT).show();
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(User_Dashboard_Activity.this);
         final View dialogView = LayoutInflater.from(User_Dashboard_Activity.this).inflate(R.layout.fetchlocation_layout, null);
         dialogBuilder.setView(dialogView);
@@ -1372,28 +1372,29 @@ public class User_Dashboard_Activity extends AppCompatActivity {
         return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     private void startRecording() {
-      //  if (checkPermissions()) {
-            if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-                mFileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/AudioRecording.3gp";
+        //  if (checkPermissions()) {
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            mFileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/voice.mp3";
 //file=convertStringToFile(mFileName);
-            } else {
-                Log.e("TAG", "External storage is not available");
-            }
-            mRecorder = new MediaRecorder();
-            mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-            mRecorder.setOutputFile(mFileName);
-            try {
-                mRecorder.prepare();
-                mRecorder.start();
+        } else {
+            Log.e("TAG", "External storage is not available");
+        }
+        mRecorder = new MediaRecorder();
+        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        mRecorder.setOutputFormat(MediaRecorder.OutputFormat. MPEG_4);
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        mRecorder.setOutputFile(mFileName);
+        try {
+            mRecorder.prepare();
+            mRecorder.start();
 //Toast.makeText(this, "Suceess", Toast.LENGTH_LONG).show();
-            } catch (IOException e) {
-                Log.e("TAG", "" + e);
-                e.printStackTrace();
-                Toast.makeText(this, "" + e, Toast.LENGTH_LONG).show();
-            }
+        } catch (IOException e) {
+            Log.e("TAG", "" + e);
+            e.printStackTrace();
+            Toast.makeText(this, "" + e, Toast.LENGTH_LONG).show();
+        }
 //        } else {
 //            RequestPermissions();
 //        }
@@ -1401,8 +1402,8 @@ public class User_Dashboard_Activity extends AppCompatActivity {
 
     private void RequestPermissions() {
         ActivityCompat.requestPermissions(User_Dashboard_Activity.this, new String[]{RECORD_AUDIO
-                                        , WRITE_EXTERNAL_STORAGE},
-                                REQUEST_AUDIO_PERMISSION_CODE);
+                        , WRITE_EXTERNAL_STORAGE},
+                REQUEST_AUDIO_PERMISSION_CODE);
     }
 
     public void pauseRecording() {
@@ -1415,12 +1416,11 @@ public class User_Dashboard_Activity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode ==
-                REQUEST_PERMISSION_CODE
-        ) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.
-                    PERMISSION_GRANTED
-            ) {
+
+        if (requestCode == REQUEST_PERMISSION_CODE) {
+
+
+           /* if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 // Permission granted, you can start recording here
             } else {
                 if (grantResults.length > 0) {
@@ -1447,7 +1447,7 @@ public class User_Dashboard_Activity extends AppCompatActivity {
 // Toast.makeText(this, "Allow permission for storage access!", Toast.LENGTH_SHORT).show();
                     }
                 }
-            }
+            }*/
         }
     }
 
@@ -1475,7 +1475,7 @@ public class User_Dashboard_Activity extends AppCompatActivity {
             if (ContextCompat.checkSelfPermission(this, WRITE_EXTERNAL_STORAGE) != PackageManager.
                     PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE
-                                        }, REQUEST_PERMISSION_CODE);
+                }, REQUEST_PERMISSION_CODE);
             }
         }
         if (Build.VERSION.

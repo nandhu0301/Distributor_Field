@@ -157,7 +157,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="New Outstanding"
+                        android:text="Outstanding Amount"
                         android:textSize="16dp"
                         android:textStyle="bold"
 
@@ -175,10 +175,37 @@
                         android:layout_alignParentEnd="true" />
 
                 </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/last"
+                    android:layout_below="@+id/outstanding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last Purchased Date"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/last_purchased_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="13-12-2023"
+                        android:textColor="@color/purple_200"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_marginTop="10dp"
-                    android:layout_below="@+id/outstanding"
+                    android:layout_below="@+id/last"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
